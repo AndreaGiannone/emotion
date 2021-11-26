@@ -1,0 +1,47 @@
+body {
+  /*background-color: powderblue;*/
+  font-family: 'Indie Flower', cursive;
+}
+h1 {
+
+}
+p {
+
+}
+.chart-header {
+  text-align: center;
+  margin: 30px;
+  font-size: 30px;
+}
+.query {
+    background-color: powderblue;
+    /*line-height: 738px;*/
+    font-size: 20px;
+}
+.question {
+    line-height: 738px;   
+}
+.main-grid {
+  border-style: solid;
+}
+.secondary-grid {
+  /*border-style: solid;*/
+  margin: 0.6px;
+}
+.separator {
+  background-color:  powderblue;
+}
+.organs {
+  height: 100%;
+  /*background-color:   lightgreen;*/
+}
+.organ-row {
+  line-height: 122.4px;font-size:20px
+}
+.odd {
+  background-color:  #d3d3d340;
+}
+
+.hide {
+  display: none;
+}
