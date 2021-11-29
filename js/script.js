@@ -1,35 +1,264 @@
 
+var $even_hidden = false;
 
 $(document).ready(function(){
-
+//------------------------------------------FIRST CYCLE------------------------------------------------------------
+//--------------------------------tr-em---------------------------
 	$('#yes-tr-em').click(function(event) {
 
 		GetURL("/queries.php?choice=yes_tr_em","POST", "search=test_parameter","json", function ( $result_tr_em ){
 
-			$('.first-column').text($result_tr_em[0]);
+			reset_bootstrap_button_style('yes-tr-em', $result_tr_em);
+			highlight_column('first-column', $result_tr_em);
+			$('.tr-em').addClass('hide');
+			$('.tr-em-1-col').removeClass('hide');
+
 
 		});
 	});
+
 	$('#no-tr-em').click(function(event) {
 
 		GetURL("/queries.php?choice=no_tr_em","POST", "search=test_parameter","json", function ( $result_tr_em ){
-			var json = '{ "background-color": "#f8f9fa","border-color":"#f8f9fa" }';
-			var cssObject = JSON.parse(json);
 
-			$('.question div').text($result_tr_em['output']);
-			$('.question button[id=no-tr-em]').css(cssObject);
+			reset_bootstrap_button_style('no-tr-em', $result_tr_em);
+			$('.tr-em').addClass('hide');
+			$('.he-wa').removeClass('hide');
+			query_font('25px');
+
 
 		});
 	});
-	$('#back').click(function(event) {
 
-		$('.first-column').load("/back.php");
-		
+//-----------------------------------he-wa----------------------------
+	$('#yes-he-wa').click(function(event) {
+
+		GetURL("/queries.php?choice=yes-he-wa","POST", "search=test_parameter","json", function ( $result_tr_em ){
+
+			reset_bootstrap_button_style('yes-he-wa', $result_tr_em);
+			highlight_column('first-column', $result_tr_em);
+			$('.he-wa').addClass('hide');
+			$('.tr-em-1-col').removeClass('hide');
+			//to do visibility button
+
+		});
 	});
 
-// 	$result_tr_em = 'hello_ajax';
-// $('.first-column').text($result_tr_em);
+	$('#no-he-wa').click(function(event) {
 
-//------------------------------------------------------------------------------
+		GetURL("/queries.php?choice=no_he-wa","POST", "search=test_parameter","json", function ( $result_tr_em ){
+
+			reset_bootstrap_button_style('no-he-wa', $result_tr_em);
+			$('.he-wa').addClass('hide');
+			$('.hi-he-wa').removeClass('hide');
+			query_font('25px');
+
+
+		});
+	});
+
+//-----------------------------------hi-he-wa----------------------------
+	$('#yes-hi-he-wa').click(function(event) {
+
+		GetURL("/queries.php?choice=yes-hi-he-wa","POST", "search=test_parameter","json", function ( $result_tr_em ){
+
+			reset_bootstrap_button_style('yes-hi-he-wa', $result_tr_em);
+			highlight_column('first-column', $result_tr_em);
+			$('.hi-he-wa').addClass('hide');
+			$('.tr-em-1-col').removeClass('hide');
+			//to do visibility button
+
+		});
+	});
+
+	$('#no-hi-he-wa').click(function(event) {
+
+		GetURL("/queries.php?choice=free-em","POST", "search=test_parameter","json", function ( $result_tr_em ){
+
+			reset_bootstrap_button_style('no-hi-he-wa', $result_tr_em);
+			$('.hi-he-wa').addClass('hide');
+			$('.free-em').removeClass('hide');
+			query_font('25px');
+
+
+		});
+	});
+
+//----------------------------------------------------------COL CYCLE------------------------------------------------------------
+
+
+	$('#yes-tr-em-1-col').click(function(event) {
+
+		GetURL("/queries.php?choice=yes_tr_em_1_col","POST", "search=test_parameter","json", function ( $result_tr_em ){
+
+			reset_bootstrap_button_style('yes-tr-em-1-col', $result_tr_em);
+			unhighlight_column('first-column', $result_tr_em);
+			$('.second-column').addClass('hide');
+			$('.tr-em-1-col').addClass('hide');
+			$('.tr-em-odd-even').removeClass('hide');
+
+		});
+	});
+	$('#no-tr-em-1-col').click(function(event) {
+
+		GetURL("/queries.php?choice=no_tr_em_1_col","POST", "search=test_parameter","json", function ( $result_tr_em ){
+
+			reset_bootstrap_button_style('no-tr-em-1-col', $result_tr_em);
+			//highlight_column('first-column', $result_tr_em);
+			$('.first-column').addClass('hide');
+			$('.tr-em-1-col').addClass('hide');
+			$('.tr-em-odd-even').removeClass('hide');
+
+		});
+	});	
+
+//--------------------------------------------------------CELL CYCLE-----------------------------------------------------
+
+
+//----------------------------------------------------ODD EVEN ----------------------------------
+	$('#yes-tr-em-odd').click(function(event) {
+
+		GetURL("/queries.php?choice=yes-tr-em-odd","POST", "search=test_parameter","json", function ( $result_tr_em ){
+
+			reset_bootstrap_button_style('yes-tr-em-odd', $result_tr_em);
+
+			$even_hidden = true;
+			$('.even').addClass('hide');
+			$('.odd').css('background-color','powderblue');
+			$('.even-organ').addClass('hide');
+			$('.tr-em-each').removeClass('hide');
+			$('.tr-em-odd-even').addClass('hide');
+
+		});
+	});
+
+	$('#no-tr-em-odd').click(function(event) {
+
+		GetURL("/queries.php?choice=no-tr-em-odd","POST", "search=test_parameter","json", function ( $result_tr_em ){
+
+			reset_bootstrap_button_style('no-tr-em-odd', $result_tr_em);
+			//highlight_column('first-column', $result_tr_em);
+			$('.odd').addClass('hide')
+			$('.even').css('background-color','#8be6f1');
+			$('.odd-organ').addClass('hide');
+			$('.tr-em-each').removeClass('hide');
+			$('.tr-em-odd-even').addClass('hide');
+			
+		});
+	});
+
+//---------------------------------------------EACH CYLCE------------------
+
+//----------------normal--------------------------------------
+
+    
+
+		$('#yes-tr-em-each').click(function(event) {
+
+			GetURL("/queries.php?choice=yes-tr-em-each","POST", "search=test_parameter","json", function ( $result_tr_em ){
+
+				reset_bootstrap_button_style('yes-tr-em-each', $result_tr_em);
+				if ($even_hidden){
+
+					$('.tr-em-each').addClass('hide');
+					$('.primary-grid-3').addClass('hide');
+					$('.primary-grid-5').addClass('hide');
+					$('.organs div:nth(8)').addClass('hide');
+					$('.organs div:nth(4)').addClass('hide');
+					$('.tr-em-emotion').removeClass('hide');
+
+				}else{
+
+					$('.tr-em-each').addClass('hide');
+					$('.primary-grid-4').addClass('hide');
+					$('.primary-grid-6').addClass('hide');
+					$('.organs div:nth(7)').addClass('hide');
+					$('.organs div:nth(10)').addClass('hide');
+					$('.tr-em-emotion').removeClass('hide');					
+				}
+
+			});
+		});
+
+		$('#no-tr-em-each').click(function(event) {
+
+			GetURL("/queries.php?choice=no-tr-em-each","POST", "search=test_parameter","json", function ( $result_tr_em ){
+
+				reset_bootstrap_button_style('no-tr-em-each', $result_tr_em);
+
+			if($even_hidden) {
+
+				$('.tr-em-each').addClass('hide');
+				$('.primary-grid-1').addClass('hide');
+				$('.organs div:nth(0)').addClass('hide');
+				$('.tr-em-each2').removeClass('hide');
+
+			}else{
+
+				$('.tr-em-each').addClass('hide');
+			    $('.primary-grid-2').addClass('hide');
+				$('.organs div:nth(3)').parent().addClass('hide'); ////check
+				$('.tr-em-each2').removeClass('hide');
+
+			}
+
+
+			});
+		});
+
+		$('#yes-tr-em-each2').click(function(event) {
+
+			GetURL("/queries.php?choice=yes-tr-em-each2","POST", "search=test_parameter","json", function ( $result_tr_em ){
+
+				reset_bootstrap_button_style('no-tr-em-each', $result_tr_em);
+
+				if($even_hidden){
+
+					$('.tr-em-each2').addClass('hide');
+					$('.primary-grid-5').addClass('hide');
+					$('.organs div:nth(8)').addClass('hide');
+					$('.tr-em-emotion').removeClass('hide');
+
+				}else{
+
+					$('.tr-em-each2').addClass('hide');
+					$('.primary-grid-6').addClass('hide');
+					$('.organs div:nth(10)').css('display','none');
+					$('.tr-em-emotion').removeClass('hide');
+
+				}
+
+
+			});
+		});
+
+		$('#no-tr-em-each2').click(function(event) {
+
+			GetURL("/queries.php?choice=no-tr-em-each2","POST", "search=test_parameter","json", function ( $result_tr_em ){
+
+				reset_bootstrap_button_style('no-tr-em-each', $result_tr_em);
+
+				if($even_hidden){
+
+					$('.tr-em-each2').addClass('hide');
+					$('.primary-grid-3').addClass('hide');
+					$('.organs div:nth(4)').addClass('hide');
+					$('.tr-em-emotion').removeClass('hide');
+
+				}else{
+
+					$('.tr-em-each2').addClass('hide');
+					$('.primary-grid-4').addClass('hide');
+					$('.organs div:nth(7)').parent().css('display','none');
+					$('.tr-em-emotion').removeClass('hide');
+
+				}	
+
+			});
+		});
+
+//---------------------------------------------EMOTION----------------------------------------
+
+
 
 });

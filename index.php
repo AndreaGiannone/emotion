@@ -5,12 +5,12 @@ $trap_emotion_array=[];
 $column_a= []; //0
 
 $organs = [
-	'Heart or Small Intestine',
-	'Spleen or Stomach',
-	'Lung or Colon',
-	'Liver or Gail Bladder',
-	'Kidneys or Bladder',
-	'Glands & Sexual Organs'
+	'Heart or Small Intestine'=>'odd-organ',
+	'Spleen or Stomach'=>'even-organ',
+	'Lung or Colon'=>'odd-organ',
+	'Liver or Gail Bladder'=>'even-organ',
+	'Kidneys or Bladder'=>'odd-organ',
+	'Glands & Sexual Organs'=>'even-organ'
 
 ];
 
@@ -64,37 +64,76 @@ $trap_emotion_array=[$column_a,$column_b];
 	<div class="container" style="text-align:center">
     	<div class="row">
     		<div class="col-3 query">
-    			<div class ="question">
-    				<div style="height: 40px;">There is a trapped emotion</div>
+    			<?php //--------------------------first cycle---------------------- ?>
+    			<div class ="tr-em">
+    				<div style="">There is a trapped emotion</div>
 		    		<button type="button" id="yes-tr-em" class="btn btn-light">Yes</button>
 		    		<button type="button" id="no-tr-em" class="btn btn-light">No</button>
-		    		<button type="button" id="back" class="btn btn-light"><-back</button>
+		    		
 				</div>
-				<div class ="hide he_wa">
-    				<div style="height: 40px;">There is a heart's wall</div>
+				<div class ="hide he-wa">
+    				<div style="">There is a heart's wall</div>
 		    		<button type="button" id="yes-he-wa" class="btn btn-light">Yes</button>
 		    		<button type="button" id="no-he-wa" class="btn btn-light">No</button>
-		    		<button type="button" id="back-he-wa" class="btn btn-light"><-back</button>
+		    		<button type="button" id="back-chart" class="btn btn-light"><a href="/"><-back</a></button>
 				</div>
-				<div class ="hide hi_he_wa">
-    				<div style="height: 40px;">There is a hidden heart's wall</div>
+				<div class ="hide hi-he-wa">
+    				<div style="">There is a hidden heart's wall</div>
 		    		<button type="button" id="yes-hi-he-wa" class="btn btn-light">Yes</button>
 		    		<button type="button" id="no-hi-he-wa" class="btn btn-light">No</button>
-		    		<button type="button" id="back-hi-he-wa" class="btn btn-light"><-back</button>
+		    		<button type="button" id="back-chart" class="btn btn-light"><a href="/"><-back</a></button>
 				</div>
-				<div class ="hide free">
+    			<?php //--------------------------column cycle---------------------- ?>
+				<div class ="hide tr-em-1-col">
+    				<div style="">The trapped emotion is in the first column</div>
+		    		<button type="button" id="yes-tr-em-1-col" class="btn btn-light">Yes</button>
+		    		<button type="button" id="no-tr-em-1-col" class="btn btn-light">No</button>
+		    		<button type="button" id="back-chart" class="btn btn-light"><a href="/"><-back</a></button>
+				</div>
+	   			<?php //-------------------------cell cycle odd even--------------------------- ?>
+				<div class ="hide tr-em-odd-even">
+    				<div style="">The trapped emotion is in the odd cells</div>
+		    		<button type="button" id="yes-tr-em-odd" class="btn btn-light">Yes</button>
+		    		<button type="button" id="no-tr-em-odd" class="btn btn-light">No</button>
+		    		<button type="button" id="back-chart" class="btn btn-light"><a href="/"><-back</a></button>
+				</div>
+	   			<?php //-------------------------cell cycle each cell--------------------------- ?>
+				<div class ="hide tr-em-each">
+    				<div style="">The trapped emotion is in the first top cell</div>
+		    		<button type="button" id="yes-tr-em-each" class="btn btn-light">Yes</button>
+		    		<button type="button" id="no-tr-em-each" class="btn btn-light">No</button>
+		    		<button type="button" id="back-chart" class="btn btn-light"><a href="/"><-back</a></button>
+				</div>
+				<div class ="hide tr-em-each2">
+    				<div style="">The trapped emotion is in the top cell</div>
+		    		<button type="button" id="yes-tr-em-each2" class="btn btn-light">Yes</button>
+		    		<button type="button" id="no-tr-em-each2" class="btn btn-light">No</button>
+		    		<button type="button" id="back-chart" class="btn btn-light"><a href="/"><-back</a></button>
+				</div>
+
+<?php //------------------------------------------------emotion cycle----------------------------- ?>
+				<div class ="hide tr-em-emotion">
+    				<div style="">The trapped emotion is an odd number</div>
+		    		<button type="button" id="yes-tr-em-emotion" class="btn btn-light">Yes</button>
+		    		<button type="button" id="no-tr-em-emotion" class="btn btn-light">No</button>
+		    		<button type="button" id="back-chart" class="btn btn-light"><a href="/"><-back</a></button>
+				</div>
+
+				<div class ="hide free-em">
+					<div style="">You don't have any trapped emotion</div>
+					<button type="button" id="back-chart" class="btn btn-light"><a href="/"><-back</a></button>
 				</div>
     		</div>
 	    	<div class="col organs">
-			<?php foreach( $organs as $organ ) { ?>	
-      			<div style="height: 122.4px;" class="secondary-grid"><div class="organ-row" style=""><?php echo $organ; ?></div></div>
+			<?php foreach( $organs as $organ => $odd_or_even ) { ?>	
+      			<div style="height: 122.4px;" class="secondary-grid<?php echo ' '. $odd_or_even; ?>"><div class="odd-or-even-row" style=""><?php echo $organ; ?></div></div>
       		<?php } ?> 				
 	    	</div>
 	    	<div class="col first-column">
     		<?php for( $i=0; $i < count($column_a); $i++ ) { ?>
     			<div class="primary-grid-<?php echo $i+1; echo $i % 2 == 0 ? ' odd': ' even'; ?>">
 	    		<?php foreach ( $column_a[$i] as $key2 => $value2) { ?>
-      			<div class="secondary-grid"><?php echo $value2;?></div><?php } ?>
+      			<div class="secondary-grid_<?php echo ' '.$key2 + 1; ?>"><?php echo $value2;?></div><?php } ?>
       			<!-- <div class=separator><br></div> -->
       			</div>
       			<?php } ?>
@@ -103,7 +142,7 @@ $trap_emotion_array=[$column_a,$column_b];
     		<?php for( $i=0; $i < count($column_b); $i++ ) { ?>
     			<div class="primary-grid-<?php echo $i+1;echo $i % 2 == 0 ? ' odd': ' even'; ?>">
 	    		<?php foreach ( $column_b[$i] as $key2 => $value2) { ?>
-      			<div class="secondary-grid"><?php echo $value2;?></div><?php } ?>
+      			<div class="secondary-grid_<?php echo ' '.$key2 + 1; ?>"><?php echo $value2;?></div><?php } ?>
       			<!-- <div class=separator><br></div> -->
       			</div>
       			<?php } ?>		

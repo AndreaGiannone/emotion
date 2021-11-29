@@ -1,5 +1,7 @@
 <?php
 
+// this is prefectly rendable by jquery .load('url of this page');
+
 $trap_emotion_array=[];
 
 $column_a= []; //0

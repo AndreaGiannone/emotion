@@ -18,13 +18,19 @@ p {
     /*line-height: 738px;*/
     font-size: 20px;
 }
-.question {
-    line-height: 738px;   
+.tr-em, .he-wa, .hi-he-wa, .tr-em-1-col, .free-em, .tr-em-odd-even {
+/*    line-height: 738px; */ 
+  margin-top: 369px;
+  height: 100px;
+  }
+.tr-em-each {
+  line-height: 100px;
+
 }
 .main-grid {
   border-style: solid;
 }
-.secondary-grid {
+.secondary-grid_1, .secondary-grid_2, .secondary-grid_3, .secondary-grid_4, .secondary-grid_5 {
   /*border-style: solid;*/
   margin: 0.6px;
 }
@@ -44,4 +50,21 @@ p {
 
 .hide {
   display: none;
+}
+
+#back-chart a {
+
+  text-decoration: none;
+  color: black;
+
+}
+.odd-or-even-row {
+  line-height: 122.4px;
+}
+
+.highlights {
+  border-style :solid,
+  border-color : powderblue,
+  font-size: 40px;
+
 }
