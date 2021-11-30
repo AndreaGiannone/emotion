@@ -68,3 +68,9 @@ p {
   font-size: 40px;
 
 }
+.last-chosen-1, .last-chosen-2, .last-chosen-3, .last-chosen-4, .last-chosen-5 {
+
+    background-color: white;
+    margin: 1px;
+
+}

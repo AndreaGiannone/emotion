@@ -1,5 +1,6 @@
 
 var $even_hidden = false;
+var $last_chosen_odd = false;
 
 $(document).ready(function(){
 //------------------------------------------FIRST CYCLE------------------------------------------------------------
@@ -259,6 +260,116 @@ $(document).ready(function(){
 
 //---------------------------------------------EMOTION----------------------------------------
 
+		$('#yes-tr-em-emotion').click(function(event) {
+
+			GetURL("/queries.php?choice=yes-tr-em-emotio","POST", "search=test_parameter","json", function ( $result_tr_em ){
+
+				reset_bootstrap_button_style('yes-tr-em-emotion', $result_tr_em);
+
+				$last_chosen_odd = true;
+
+				$('.secondary-grid_1').addClass('last-chosen-1');
+				$('.secondary-grid_2').addClass('hide');
+				$('.secondary-grid_3').addClass('last-chosen-2');								
+				$('.secondary-grid_4').addClass('hide');				
+				$('.secondary-grid_5').addClass('last-chosen-3');
+				$('.tr-em-emotion').addClass('hide');
+				$('.three-last').removeClass('hide');
+
+			});
+		});
+
+		$('#no-tr-em-emotion').click(function(event) {
+
+			GetURL("/queries.php?choice=no-tr-em-emotio","POST", "search=test_parameter","json", function ( $result_tr_em ){
+
+				reset_bootstrap_button_style('yes-tr-em-emotion', $result_tr_em);
+
+				$('.secondary-grid_1').addClass('hide');
+				$('.secondary-grid_2').addClass('last-chosen-1');
+				$('.secondary-grid_3').addClass('hide');								
+				$('.secondary-grid_4').addClass('last-chosen-2');				
+				$('.secondary-grid_5').addClass('hide');
+				$('.tr-em-emotion').addClass('hide');
+				$('.last-cycle').removeClass('hide');
+
+
+			});
+		});
+
+		$('#three-last-yes').click(function(event) {
+
+			GetURL("/queries.php?choice=three-last-yes","POST", "search=test_parameter","json", function ( $result_tr_em ){
+
+				reset_bootstrap_button_style('three-last-yes', $result_tr_em);
+
+				$('.last-chosen-2').addClass('hide');
+				$('.last-chosen-3').addClass('hide');
+				$('.three-last').html('<div>you can free the this emotion</div>');
+				$('.last-chosen-1').css('font-size','30px');
+			});
+		});
+
+		$('#three-last-no').click(function(event) {
+
+			GetURL("/queries.php?choice=three-last-no","POST", "search=test_parameter","json", function ( $result_tr_em ){
+
+				reset_bootstrap_button_style('three-last-no', $result_tr_em);
+
+				$('.last-cycle').removeClass('hide');
+				$('.three-last').addClass('hide');
+				$('.last-chosen-1').addClass('hide');
+
+			});
+		});
+
+		$('#last-cycle-yes').click(function(event) {
+
+			GetURL("/queries.php?choice=last-cycle-yes","POST", "search=test_parameter","json", function ( $result_tr_em ){
+
+				reset_bootstrap_button_style('last-cycle-yes', $result_tr_em);
+
+				if($last_chosen_odd){
+
+					$('.last-chosen-3').addClass('hide');
+					$('.last-cycle').html('<div>you can free this emotion</div>');
+					$('.last-chosen-2').css('font-size','30px');
+
+				}else{
+
+				    $('.last-chosen-2').addClass('hide');
+				    $('.last-cycle').html('<div>you can free this emotion</div>');
+				    $('.last-chosen-1').css('font-size','30px');
+				    
+			}	
+
+			});
+
+
+		});
+
+		$('#last-cycle-no').click(function(event) {
+
+			GetURL("/queries.php?choice=last-cycle-no","POST", "search=test_parameter","json", function ( $result_tr_em ){
+
+				reset_bootstrap_button_style('last-cycle-no', $result_tr_em);
+
+				if($last_chosen_odd){
+
+					$('.last-chosen-2').addClass('hide');
+				    $('.last-cycle').html('<div>you can free this emotion</div>');
+				    $('.last-chosen-3').css('font-size','30px');
+
+				}else{
+
+					$('.last-chosen-1').addClass('hide');
+					$('.last-cycle').html('<div>you can free this emotion</div>');
+					$('.last-chosen-2').css('font-size','30px');
+
+				}
+
+			});
+		});
 
 
 });

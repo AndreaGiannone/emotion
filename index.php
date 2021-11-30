@@ -119,6 +119,22 @@ $trap_emotion_array=[$column_a,$column_b];
 		    		<button type="button" id="back-chart" class="btn btn-light"><a href="/"><-back</a></button>
 				</div>
 
+				<div class ="hide three-last">
+    				<div style="">The trap emotion is the first in the cell</div>
+		    		<button type="button" id="three-last-yes" class="btn btn-light">Yes</button>
+		    		<button type="button" id="three-last-no" class="btn btn-light">No</button>
+		    		<button type="button" id="back-chart" class="btn btn-light"><a href="/"><-back</a></button>
+				</div>
+
+				<div class ="hide last-cycle">
+    				<div style="">The trap emotion is the first in the cell</div>
+		    		<button type="button" id="last-cycle-yes" class="btn btn-light">Yes</button>
+		    		<button type="button" id="last-cycle-no" class="btn btn-light">No</button>
+		    		<button type="button" id="back-chart" class="btn btn-light"><a href="/"><-back</a></button>
+				</div>
+
+
+
 				<div class ="hide free-em">
 					<div style="">You don't have any trapped emotion</div>
 					<button type="button" id="back-chart" class="btn btn-light"><a href="/"><-back</a></button>
