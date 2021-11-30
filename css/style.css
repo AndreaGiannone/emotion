@@ -34,6 +34,9 @@ p {
   /*border-style: solid;*/
   margin: 0.6px;
 }
+.secondary-grid{
+  height: 122.4px;
+}
 .separator {
   background-color:  powderblue;
 }
@@ -72,5 +75,91 @@ p {
 
     background-color: white;
     margin: 1px;
+
+}
+
+@media screen and (max-width: 992px) {
+
+  body{
+    font-size: 13px;
+  }
+.tr-em, .he-wa, .hi-he-wa, .tr-em-1-col, .free-em, .tr-em-odd-even {
+/*    line-height: 738px; */ 
+  margin-top: 230px;
+  height: 100px;
+  }
+  .odd-or-even-row {
+    font-size: 10px;
+    height: 99px;
+    line-height: 10.6 !important;
+  }
+  .secondary-grid.odd-organ{
+  height: 99px;
+  }
+  .secondary-grid.even-organ{
+  height: 99px;
+  } 
+
+  .odd-organ{
+
+    height: 50px;
+
+  }
+
+  .even-organ{
+
+    height: 50px;
+
+  }
+  .odd-or-even-row {
+      line-height: 50.4px;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+
+  body{
+    font-size: 10px;
+  }
+.tr-em, .he-wa, .hi-he-wa, .tr-em-1-col, .free-em, .tr-em-odd-even {
+/*    line-height: 738px; */ 
+  margin-top: 150px;
+  height: 60px;
+  }
+
+.tr-em-each {
+  
+  margin-top: 0;
+  font-size: 15px;
+  height: 2;
+  line-height: 2;
+
+}
+
+  .odd-or-even-row {
+    font-size: 9px;
+    height: 40px;
+    line-height: 4 !important;
+  }
+
+  .secondary-grid.even-organ, .secondary-grid.odd-organ {
+
+    height: 80px;
+
+  }
+/*  #yes-tr-em-each.btn.btn-light{
+    margin-top: -140px;
+
+  }
+  #no-tr-em-each.btn.btn-light{
+    margin-top: -30px;
+
+  }
+  #back-chart.btn.btn-light{
+    margin-top: -14px;
+
+  }*/
+
 
 }

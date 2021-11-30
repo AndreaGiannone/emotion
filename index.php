@@ -142,7 +142,7 @@ $trap_emotion_array=[$column_a,$column_b];
     		</div>
 	    	<div class="col organs">
 			<?php foreach( $organs as $organ => $odd_or_even ) { ?>	
-      			<div style="height: 122.4px;" class="secondary-grid<?php echo ' '. $odd_or_even; ?>"><div class="odd-or-even-row" style=""><?php echo $organ; ?></div></div>
+      			<div style="" class="secondary-grid<?php echo ' '. $odd_or_even; ?>"><div class="odd-or-even-row" style=""><?php echo $organ; ?></div></div>
       		<?php } ?> 				
 	    	</div>
 	    	<div class="col first-column">
