@@ -11,6 +11,7 @@ $(document).ready(function(){
 
 			reset_bootstrap_button_style('yes-tr-em', $result_tr_em);
 			highlight_column('first-column', $result_tr_em);
+			$('.first-column').animate({right: 20},300).animate({top: 10},300);
 			$('.tr-em').addClass('hide');
 			$('.tr-em-1-col').removeClass('hide');
 
@@ -38,6 +39,7 @@ $(document).ready(function(){
 
 			reset_bootstrap_button_style('yes-he-wa', $result_tr_em);
 			highlight_column('first-column', $result_tr_em);
+			$('.first-column').animate({right: 20},300).animate({top: 10},300);
 			$('.he-wa').addClass('hide');
 			$('.tr-em-1-col').removeClass('hide');
 			//to do visibility button
@@ -65,6 +67,7 @@ $(document).ready(function(){
 
 			reset_bootstrap_button_style('yes-hi-he-wa', $result_tr_em);
 			highlight_column('first-column', $result_tr_em);
+			$('.first-column').animate({right: 20},300).animate({top: 10},300);
 			$('.hi-he-wa').addClass('hide');
 			$('.tr-em-1-col').removeClass('hide');
 			//to do visibility button
@@ -94,7 +97,9 @@ $(document).ready(function(){
 
 			reset_bootstrap_button_style('yes-tr-em-1-col', $result_tr_em);
 			unhighlight_column('first-column', $result_tr_em);
-			$('.second-column').addClass('hide');
+			$('.second-column').fadeOut(800);//.addClass('hide');
+			$('.first-column').fadeOut(400).fadeIn(1850);//.addClass('hide');
+			$('.organs').fadeOut(400).fadeIn(1850);
 			$('.tr-em-1-col').addClass('hide');
 			$('.tr-em-odd-even').removeClass('hide');
 
@@ -106,7 +111,9 @@ $(document).ready(function(){
 
 			reset_bootstrap_button_style('no-tr-em-1-col', $result_tr_em);
 			//highlight_column('first-column', $result_tr_em);
-			$('.first-column').addClass('hide');
+			$('.first-column').fadeOut(800);//.addClass('hide');
+			$('.second-column').fadeOut(400).fadeIn(1850);//.addClass('hide');
+			$('.organs').fadeOut(400).fadeIn(1850);
 			$('.tr-em-1-col').addClass('hide');
 			$('.tr-em-odd-even').removeClass('hide');
 
@@ -124,9 +131,12 @@ $(document).ready(function(){
 			reset_bootstrap_button_style('yes-tr-em-odd', $result_tr_em);
 
 			$even_hidden = true;
-			$('.even').addClass('hide');
+			
+			$('.even').fadeOut(800);
+			$('.odd').fadeOut(800).fadeIn(700);
 			$('.odd').css('background-color','powderblue');
-			$('.even-organ').addClass('hide');
+			$('.even-organ').fadeOut(800);//.addClass('hide');
+			$('.odd-organ').fadeOut(800).fadeIn(700);
 			$('.tr-em-each').removeClass('hide');
 			$('.tr-em-odd-even').addClass('hide');
 
@@ -139,9 +149,11 @@ $(document).ready(function(){
 
 			reset_bootstrap_button_style('no-tr-em-odd', $result_tr_em);
 			//highlight_column('first-column', $result_tr_em);
-			$('.odd').addClass('hide')
-			$('.even').css('background-color','#8be6f1');
-			$('.odd-organ').addClass('hide');
+			$('.odd').fadeOut(800);
+			$('.even').fadeOut(800).fadeIn(700);
+			$('.even').css('background-color','powderblue');
+			$('.odd-organ').fadeOut(800);//.addClass('hide');
+			$('.even-organ').fadeOut(800).fadeIn(700);
 			$('.tr-em-each').removeClass('hide');
 			$('.tr-em-odd-even').addClass('hide');
 			
@@ -162,19 +174,19 @@ $(document).ready(function(){
 				if ($even_hidden){
 
 					$('.tr-em-each').addClass('hide');
-					$('.primary-grid-3').addClass('hide');
-					$('.primary-grid-5').addClass('hide');
-					$('.organs div:nth(8)').addClass('hide');
-					$('.organs div:nth(4)').addClass('hide');
+					$('.primary-grid-3').fadeOut();//.addClass('hide');
+					$('.primary-grid-5').fadeOut();//.addClass('hide');
+					$('.organs div:nth(8)').fadeOut();//.addClass('hide');
+					$('.organs div:nth(4)').fadeOut();//.addClass('hide');
 					$('.tr-em-emotion').removeClass('hide');
 
 				}else{
 
 					$('.tr-em-each').addClass('hide');
-					$('.primary-grid-4').addClass('hide');
-					$('.primary-grid-6').addClass('hide');
-					$('.organs div:nth(7)').addClass('hide');
-					$('.organs div:nth(10)').addClass('hide');
+					$('.primary-grid-4').fadeOut();//.addClass('hide');
+					$('.primary-grid-6').fadeOut();//.addClass('hide');
+					$('.organs div:nth(7)').fadeOut();//.addClass('hide');
+					$('.organs div:nth(10)').fadeOut();//.addClass('hide');
 					$('.tr-em-emotion').removeClass('hide');					
 				}
 
@@ -305,7 +317,7 @@ $(document).ready(function(){
 
 				$('.last-chosen-2').addClass('hide');
 				$('.last-chosen-3').addClass('hide');
-				$('.three-last').html('<div>you can free the this emotion</div>');
+				$('.three-last').html('<div style="margin:25px">you can free this emotion</div>');
 				$('.last-chosen-1').css('font-size','30px');
 			});
 		});
@@ -332,15 +344,15 @@ $(document).ready(function(){
 				if($last_chosen_odd){
 
 					$('.last-chosen-3').addClass('hide');
-					$('.last-cycle').html('<div>you can free this emotion</div>');
+					$('.last-cycle').html('<div style="margin:25px">you can free this emotion</div>');
 					$('.last-chosen-2').css('font-size','30px');
 
 				}else{
 
 				    $('.last-chosen-2').addClass('hide');
-				    $('.last-cycle').html('<div>you can free this emotion</div>');
+				    $('.last-cycle').html('<div style="margin:25px">you can free this emotion</div>');
 				    $('.last-chosen-1').css('font-size','30px');
-				    
+
 			}	
 
 			});
@@ -357,13 +369,13 @@ $(document).ready(function(){
 				if($last_chosen_odd){
 
 					$('.last-chosen-2').addClass('hide');
-				    $('.last-cycle').html('<div>you can free this emotion</div>');
+				    $('.last-cycle').html('<div style="margin:25px">you can free this emotion</div>');
 				    $('.last-chosen-3').css('font-size','30px');
 
 				}else{
 
 					$('.last-chosen-1').addClass('hide');
-					$('.last-cycle').html('<div>you can free this emotion</div>');
+					$('.last-cycle').html('<div style="margin:25px">you can free this emotion</div>');
 					$('.last-chosen-2').css('font-size','30px');
 
 				}
