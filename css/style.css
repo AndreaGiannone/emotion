@@ -66,7 +66,7 @@ p {
 }
 
 .highlights {
-  border-style :solid,
+  border-style :5px,
   border-color : powderblue,
   font-size: 40px;
 
@@ -81,24 +81,54 @@ p {
 @media screen and (max-width: 992px) {
 
   body{
-    font-size: 13px;
+    font-size: 16px;
   }
+  .primary-grid-1, .primary-grid-2, .primary-grid-3, .primary-grid-4, .primary-grid-5, .primary-grid-6 {
+    height: 312px;
+    font-size:26px;
+    margin: 5px
+  }
+  button {
+    height:100px;
+    width:100px;
+    margin-top:20px;
+    font-size:35px!important
+  
+  }
+  .col-3.query{
+    font-size: 35px;
+  }
+  .container {
+    height: 2000px;
+  }
+  .organs{
+    display: none;
+  }
+.secondary-grid_1, .secondary-grid_2, .secondary-grid_3, .secondary-grid_4, .secondary-grid_5 {
+  /*border-style: solid;*/
+  margin: 0.6px;
+  line-height: 2.38;
+}
 .tr-em, .he-wa, .hi-he-wa, .tr-em-1-col, .free-em, .tr-em-odd-even {
 /*    line-height: 738px; */ 
-  margin-top: 230px;
+  margin-top: 700px;
   height: 100px;
   }
   .odd-or-even-row {
-    font-size: 10px;
+    font-size: 24px;
     height: 99px;
     line-height: 10.6 !important;
   }
   .secondary-grid.odd-organ{
-  height: 99px;
+  height: 280px;
+  margin-top:12px;
+ 
   }
   .secondary-grid.even-organ{
-  height: 99px;
-  } 
+  height: 280px;
+  margin-top:12px;
+  
+  }  
 
   .odd-organ{
 
@@ -114,13 +144,18 @@ p {
   .odd-or-even-row {
       line-height: 50.4px;
   }
+  .highlights {
+
+    border-width: 7px!important;
+
+  }
 
 }
 
 @media screen and (max-width: 600px) {
 
   body{
-    font-size: 10px;
+    font-size: 16px;
   }
 .tr-em, .he-wa, .hi-he-wa, .tr-em-1-col, .free-em, .tr-em-odd-even {
 /*    line-height: 738px; */ 
@@ -131,21 +166,21 @@ p {
 .tr-em-each {
   
   margin-top: 0;
-  font-size: 15px;
+  font-size: 16px;
   height: 2;
   line-height: 2;
 
 }
 
   .odd-or-even-row {
-    font-size: 9px;
+    font-size: 16px;
     height: 40px;
     line-height: 4 !important;
   }
 
   .secondary-grid.even-organ, .secondary-grid.odd-organ {
 
-    height: 80px;
+    height: 135px;
 
   }
 /*  #yes-tr-em-each.btn.btn-light{

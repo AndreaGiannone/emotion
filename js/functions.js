@@ -254,9 +254,9 @@ function reset_bootstrap_button_style($class_triggered, $result_tr_em = []){
 
 function highlight_column($class_triggered, $result_tr_em = []){
 
-    var $highlight_column = '{ "border-style": "solid","border-color":"powderblue" }';
+    var $highlight_column = '{ "border-style": "solid","border-width":"5px","border-color":"powderblue" }';
     var $cssObject = JSON.parse($highlight_column);
-    $('.' + $class_triggered).css($cssObject);
+    $('.' + $class_triggered).css($cssObject).css('border-width','5px');
 
 }
 

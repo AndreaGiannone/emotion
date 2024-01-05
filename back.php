@@ -18,7 +18,7 @@ $organs = [
 
 $row1a=['abandonment',	'betrayal',	'forlorn',	'lost',	'love unreceived'];	//0
 $row2a=['anxiety',	'despair',	'disgust',	'nervousness',	'worry']; //1	
-$row3a=['crying',	'discouragement',	'regection',	'sadness',	'sorrow']; //2
+$row3a=['crying',	'discouragement',	'rejection',	'sadness',	'sorrow']; //2
 $row4a=['anger',	'bitterness',	'guilt',	'hatred',	'resentment']; //3	
 $row5a=['blaming',	'dread',	'fear',	'horror',	'peeved'];	//4
 $row6a=['humilation',	'jealousy',	'longing',	'lust',	'overhelm']; //5
